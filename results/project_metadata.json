@@ -1,0 +1,26 @@
+{
+  "project": "Grokking on Modular Addition — Reverse-Engineering the Learned Circuit",
+  "task": "(a + b) mod p",
+  "modulus_p": 113,
+  "vocab_size": 114,
+  "train_test_split": "30% / 70%",
+  "model": {
+    "n_layers": 1,
+    "d_model": 128,
+    "n_heads": 4,
+    "d_head": 32,
+    "d_mlp": 512,
+    "act_fn": "relu",
+    "normalization_type": null,
+    "biases": "frozen at 0"
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 1.0,
+    "betas": [0.9, 0.98]
+  },
+  "num_epochs": 12000,
+  "seed": 0,
+  "library": "TransformerLens"
+}

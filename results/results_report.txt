@@ -1,0 +1,53 @@
+============================================================
+GROKKING ON MODULAR ADDITION — RESULTS REPORT
+============================================================
+
+Task: (a + b) mod 113
+Train/Test Split: 30% / 70% (seed 0)
+Model: 1-layer transformer, d_model=128, 4 heads, d_mlp=512
+
+------------------------------------------------------------
+TRAINING
+------------------------------------------------------------
+Total epochs trained       : 12,000
+Final train accuracy       : 1.0000
+Final test accuracy        : 1.0000
+First epoch test acc > 90% : 10,400
+Test acc reached 100% at   : ~10,900 (stable plateau through 11,900)
+Memorizing checkpoint epoch: 500
+
+------------------------------------------------------------
+FOURIER ANALYSIS
+------------------------------------------------------------
+Key frequencies (embedding)   : [1, 2, 17, 28]
+Key frequencies (unembedding) : [1, 2, 17, 28]
+Overlap                       : 100%
+
+Key-frequency energy fraction:
+  Memorizing checkpoint (epoch 500) : 0.118
+  Grokked (final) model              : 0.889
+
+------------------------------------------------------------
+CAUSAL ABLATIONS (logits)
+------------------------------------------------------------
+                        Train Loss  Train Acc   Test Loss   Test Acc
+Full model                 0.0000      1.000      0.0000      1.000
+Restricted (key only)      0.0000      1.000      0.0000      1.000
+Excluded (key removed)     5.3449      0.018      5.5351      0.012
+
+------------------------------------------------------------
+CAUSAL ABLATIONS (embedding)
+------------------------------------------------------------
+Keep only key frequencies     : test acc 1.000
+Keep only non-key frequencies : test acc 0.0097 (~chance = 0.0088)
+
+------------------------------------------------------------
+CONCLUSION
+------------------------------------------------------------
+The model learned a sparse Fourier-based circuit concentrated on
+4 frequencies, shared identically between embedding and unembedding.
+Ablations confirm this is causal: removing these frequencies collapses
+performance to near-chance, while keeping only them preserves full
+accuracy. This matches the trig-identity mechanism described by
+Nanda et al. (2023).
+============================================================

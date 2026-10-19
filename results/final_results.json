@@ -1,0 +1,17 @@
+{
+  "modulus_p": 113,
+  "train_fraction": 0.3,
+  "seed": 0,
+  "num_epochs": 12000,
+  "final_train_accuracy": 1.0,
+  "final_test_accuracy": 1.0,
+  "first_test_acc_above_90pct_epoch": 10400,
+  "test_acc_reached_100pct_epoch": 10900,
+  "memorizing_checkpoint_epoch": 500,
+  "key_frequencies": [1, 2, 17, 28],
+  "ablation": {
+    "full_model": {"train_loss": 0.0, "train_acc": 1.0, "test_loss": 0.0, "test_acc": 1.0},
+    "key_freqs_only": {"train_loss": 0.0, "train_acc": 1.0, "test_loss": 0.0, "test_acc": 1.0},
+    "key_freqs_removed": {"train_loss": 5.3449, "train_acc": 0.018, "test_loss": 5.5351, "test_acc": 0.012}
+  }
+}

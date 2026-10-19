@@ -1,0 +1,6 @@
+Experiment,Train Loss,Train Accuracy,Test Loss,Test Accuracy
+Full Model,0.0000,1.000,0.0000,1.000
+Key Frequencies Only,0.0000,1.000,0.0000,1.000
+Key Frequencies Removed,5.3449,0.018,5.5351,0.012
+Embedding: Key Only,,,,1.000
+Embedding: Non-Key Only,,,,0.0097

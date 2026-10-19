@@ -1,0 +1,13 @@
+{
+  "embedding_key_frequencies": [1, 2, 17, 28],
+  "unembedding_key_frequencies": [1, 2, 17, 28],
+  "overlap": [1, 2, 17, 28],
+  "key_frequency_energy_fraction": {
+    "memorizing_checkpoint_epoch_500": 0.118,
+    "grokked_final_model": 0.889
+  },
+  "embedding_ablation_test_accuracy": {
+    "key_frequencies_only": 1.0,
+    "non_key_frequencies_only": 0.0097
+  }
+}
